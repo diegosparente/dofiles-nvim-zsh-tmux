@@ -42,7 +42,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```sh
 cp ~/.config/nvim/.tmux.conf ~
 ```
-* Run ```sh < prefix > + I ``` to install TMP
+* Run ``` < prefix > + I ``` to install TMP
 
 Now make your modifications and your version! Success and health for you!
 
