@@ -8,7 +8,7 @@ To use my settings, you need to clone the repository in the following directory:
     
 
 ```sh
-git clone git@bitbucket.org:diegosparente/my-nvim-config.git ~/.config/nvim
+git clone git@gitlab.com:diegosparente/my-nvim-config.git ~/.config/nvim
 ```
 * If the ~/.config/nvim path does not exist create one;
 
