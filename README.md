@@ -46,5 +46,6 @@ cp ~/.config/nvim/.tmux.conf ~
 
 Now make your modifications and your version! Success and health for you!
 
-* [VIM book](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vimbook/vimbook-31-08-2009.pdf)
-* [tmux book](http://uploads.mitechie.com/books/tmux_p1_1.pdf)
+* [VIM book(Portuguese)](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vimbook/vimbook-31-08-2009.pdf)
+* [VIM book (English)](http://www.truth.sk/vim/vimbook-OPL.pdf)
+* [tmux book (English)](http://uploads.mitechie.com/books/tmux_p1_1.pdf)
