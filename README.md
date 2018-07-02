@@ -5,10 +5,10 @@ This is the current setting I use in the neovim editor. I hope it helps!
 ## Overview
 
 To use my settings, you need to clone the repository in the following directory:
-    
+
 
 ```sh
-git clone git@gitlab.com:diegosparente/my-nvim-config.git ~/.config/nvim
+git clone https://gitlab.com/diegosparente/my-nvim-config.git ~/.config/nvim
 ```
 * If the ~/.config/nvim path does not exist create one;
 
@@ -29,7 +29,16 @@ This will cause all plugins to be installed. Every time that add a new plugin th
 
 Open init.vim to see how things are organized (I think I organized= D)
 
+## zshrc
+
+if you use zsh and want to base it on my config also copy the .zshrc to ~
+
+```sh
+cp ~/.config/nvim/.zshrc ~
+```
+
 ## tmux
+
 I am using tmux as follows:
 
 * Clone the TMP repository
@@ -37,7 +46,7 @@ I am using tmux as follows:
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-* Copy or move the .tmux.conf from the ~ / .config / nvim directory to ~
+* Copy or move the .tmux.conf from the ~/.config/nvim directory to ~
 
 ```sh
 cp ~/.config/nvim/.tmux.conf ~
