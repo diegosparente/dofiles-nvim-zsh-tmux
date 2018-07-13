@@ -20,7 +20,7 @@ call plug#begin()
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'ap/vim-css-color'
-  
+
   " GraphQL
   Plug 'jparise/vim-graphql'
 
@@ -68,7 +68,7 @@ set ttyfast
 colorscheme gruvbox
 set background=dark
 
-"" Configuration 
+"" Configuration
 let g:gruvbox_contrast_dark = 'hard'
 
 "#######################################
@@ -93,7 +93,7 @@ if has("gui_running")
     set transparency=7
   endif
 else
-  let g:CSApprox_loaded = 1  
+  let g:CSApprox_loaded = 1
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -101,7 +101,7 @@ else
       set term=xterm-256color
     endif
   endif
-  
+
 endif
 
 if &term =~ '256color'
@@ -138,11 +138,7 @@ nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<cr>
 
 let g:ale_use_deprecated_neovim = 1
-
 let NERDTreeShowHidden = 1
-
-let g:UltiSnipsEditSplit = 'vertical'
-let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
 
 "#######################################
 "#            Linter config	       #
