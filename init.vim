@@ -19,6 +19,7 @@ call plug#begin()
   Plug 'Shougo/neocomplcache'
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
+  Plug 'ap/vim-css-color'
   
   " GraphQL
   Plug 'jparise/vim-graphql'
