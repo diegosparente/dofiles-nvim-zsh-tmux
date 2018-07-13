@@ -10,11 +10,7 @@ To use my settings, you need to clone the repository in the following directory:
 ```sh
 git clone https://gitlab.com/diegosparente/my-nvim-config.git ~/.config/nvim
 ```
-* If the ~/.config/nvim path does not exist create one;
 
-```sh
-mkdir -p ~/.config/nvim
-```
 * remember that you need to have neovim installed =D ;
 
 ## Plugins
@@ -34,7 +30,7 @@ Open init.vim to see how things are organized (I think I organized= D)
 if you use zsh and want to base it on my config also copy the .zshrc to ~
 
 ```sh
-cp ~/.config/nvim/.zshrc ~
+cp ~/.config/nvim/extra/.zshrc ~
 ```
 
 ## tmux
@@ -49,7 +45,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 * Copy or move the .tmux.conf from the ~/.config/nvim directory to ~
 
 ```sh
-cp ~/.config/nvim/.tmux.conf ~
+cp ~/.config/nvim/extra/.tmux.conf ~
 ```
 * Run ``` < prefix > + I ``` to install TMP
 

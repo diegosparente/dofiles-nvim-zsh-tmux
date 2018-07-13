@@ -8,7 +8,6 @@ call plug#begin()
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
- "  Plug 'roxma/nvim-completion-manager'
   Plug 'w0rp/ale'
   Plug 'jiangmiao/auto-pairs'
   Plug 'mattn/emmet-vim'
@@ -16,9 +15,13 @@ call plug#begin()
   Plug 'scrooloose/nerdtree'
   Plug 'itchyny/lightline.vim'
   Plug 'itchyny/vim-gitbranch'
-  " Plug 'vim-airline/vim-airline'
-  " Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
+  Plug 'Shougo/neocomplcache'
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+  
+  " GraphQL
+  Plug 'jparise/vim-graphql'
 
   " elixir
   Plug 'elixir-lang/vim-elixir'
@@ -33,6 +36,10 @@ call plug#begin()
   " javascript
   "" Javascript Bundle
   Plug 'jelera/vim-javascript-syntax'
+  "" ES6
+  Plug 'isRuslan/vim-es6'
+  "" JSX
+  Plug 'mxw/vim-jsx'
 
   " ruby
   Plug 'tpope/vim-rails'
@@ -101,6 +108,21 @@ if &term =~ '256color'
 endif
 
 "#######################################
+"#          Plug's by Shougo	       #
+"#######################################
+
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+"#######################################
 "#               Mappings	       #
 "#######################################
 
@@ -116,7 +138,10 @@ nnoremap <silent> <S-t> :tabnew<cr>
 
 let g:ale_use_deprecated_neovim = 1
 
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
 
 "#######################################
 "#            Linter config	       #
@@ -149,43 +174,3 @@ let g:lightline = {
       \ },
       \ }
 
-" ==> Airline config
-
-" vim-airline
-
-"set noshowmode
-
-"if !exists('g:airline_symbols')
-"  let g:airline_symbols = {}
-"endif
-
-"if !exists('g:airline_powerline_fonts')
-"  let g:airline#extensions#tabline#left_sep = ' '
-"  let g:airline#extensions#tabline#left_alt_sep = '|'
-"  let g:airline_left_sep          = '▶'
-"  let g:airline_left_alt_sep      = '»'
-"  let g:airline_right_sep         = '◀'
-"  let g:airline_right_alt_sep     = '«'
-"  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-"  let g:airline#extensions#readonly#symbol   = '⊘'
-"  let g:airline#extensions#linecolumn#prefix = '¶'
-"  let g:airline#extensions#paste#symbol      = 'ρ'
-"  let g:airline_symbols.linenr    = '␊'
-"  let g:airline_symbols.branch    = '⎇'
-"  let g:airline_symbols.paste     = 'ρ'
-"  let g:airline_symbols.paste     = 'Þ'
-"  let g:airline_symbols.paste     = '∥'
-"  let g:airline_symbols.whitespace = 'Ξ'
-"else
-"  let g:airline#extensions#tabline#left_sep = ''
-"  let g:airline#extensions#tabline#left_alt_sep = ''
-
-  " powerline symbols
-"  let g:airline_left_sep = ''
-"  let g:airline_left_alt_sep = ''
-"  let g:airline_right_sep = ''
-"  let g:airline_right_alt_sep = ''
-"  let g:airline_symbols.branch = ''
-"  let g:airline_symbols.readonly = ''
-"  let g:airline_symbols.linenr = ''
-"endif
