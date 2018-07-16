@@ -1,6 +1,7 @@
 "#######################################
 "#		Plug core	       #
 "#######################################
+
 call plug#begin()
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'morhetz/gruvbox'
@@ -18,7 +19,7 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'ap/vim-css-color'
   Plug 'bronson/vim-trailing-whitespace'
-  
+
   " GraphQL
   Plug 'jparise/vim-graphql'
 
@@ -62,7 +63,7 @@ set ttyfast
 "#######################################
 "#		  color		       #
 "#######################################
-
+" set termguicolors
 colorscheme gruvbox
 set background=dark
 
@@ -78,6 +79,9 @@ set number
 set relativenumber
 set mouse=a
 syntax on
+
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
 
 "#######################################
 "#         Terminal color system       #
