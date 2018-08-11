@@ -1,10 +1,10 @@
 "#######################################
-"#		Plug core	       #
+"#	          	Plug core     	       #
 "#######################################
 
 call plug#begin()
   Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'morhetz/gruvbox'
+ " Plug 'morhetz/gruvbox'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -50,7 +50,7 @@ call plug#begin()
 call plug#end()
 
 "#######################################
-"#		encoding	       #
+"#        		  encoding      	       #
 "#######################################
 
 set encoding=utf-8
@@ -61,18 +61,23 @@ set binary
 set ttyfast
 
 "#######################################
-"#		  color		       #
+"#		           color	      	       #
 "#######################################
 " set termguicolors
-colorscheme gruvbox
+colorscheme dracula
+"colorscheme gruvbox
 set background=dark
 
 "" Configuration
-let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 
 "#######################################
-"#		  basic		       #
+"#	          	  basic		             #
 "#######################################
+set tabstop=2
+set softtabstop=0
+set shiftwidth=2
+set expandtab
 
 set hidden
 set number
@@ -110,7 +115,7 @@ if &term =~ '256color'
 endif
 
 "#######################################
-"#               Mappings	       #
+"#               Mappings	             #
 "#######################################
 
 let mapleader="\<space>"
@@ -127,7 +132,7 @@ let g:ale_use_deprecated_neovim = 1
 let NERDTreeShowHidden = 1
 
 "#######################################
-"#            Linter config	       #
+"#            Linter config	           #
 "#######################################
 
 let g:ale_linters = {
