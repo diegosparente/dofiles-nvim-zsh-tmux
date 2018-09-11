@@ -4,7 +4,7 @@
 
 call plug#begin()
   Plug 'dracula/vim', { 'as': 'dracula' }
- " Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -64,12 +64,12 @@ set ttyfast
 "#		           color	      	       #
 "#######################################
 " set termguicolors
-colorscheme dracula
-"colorscheme gruvbox
+"colorscheme dracula
+colorscheme gruvbox
 set background=dark
 
 "" Configuration
-"let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 
 "#######################################
 "#	          	  basic		             #
@@ -78,7 +78,9 @@ set tabstop=2
 set softtabstop=0
 set shiftwidth=2
 set expandtab
-
+set inccommand=split
+set clipboard=unnamed
+set noshowmode
 set hidden
 set number
 set relativenumber
@@ -148,8 +150,6 @@ set autoread
 "#######################################
 
 " ==> LightLine config
-
- set noshowmode
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
