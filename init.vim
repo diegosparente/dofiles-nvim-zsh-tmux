@@ -1,5 +1,5 @@
 "#######################################
-"#	          	Plug core     	       #
+"#		Plug core	       #
 "#######################################
 
 call plug#begin()
@@ -50,37 +50,32 @@ call plug#begin()
 call plug#end()
 
 "#######################################
-"#        		  encoding      	       #
+"#		encoding	       #
 "#######################################
 
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
-set bomb
-set binary
-set ttyfast
 
 "#######################################
-"#		           color	      	       #
+"#		  color		       #
 "#######################################
 " set termguicolors
-"colorscheme dracula
 colorscheme gruvbox
+"colorscheme dracula
 set background=dark
+"let g:dracula_italic = 0
+"set termguicolors
 
 "" Configuration
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark='hard'
 
 "#######################################
-"#	          	  basic		             #
+"#		  basic		       #
 "#######################################
-set tabstop=2
-set softtabstop=0
-set shiftwidth=2
-set expandtab
-set inccommand=split
-set clipboard=unnamed
+
 set noshowmode
+set inccommand=split
 set hidden
 set number
 set relativenumber
@@ -91,33 +86,7 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 "#######################################
-"#         Terminal color system       #
-"#######################################
-" This excerpt is a copy of the vim-bootstrap
-
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-
-endif
-
-if &term =~ '256color'
-  set t_ut=
-endif
-
-"#######################################
-"#               Mappings	             #
+"#               Mappings	       #
 "#######################################
 
 let mapleader="\<space>"
@@ -134,7 +103,7 @@ let g:ale_use_deprecated_neovim = 1
 let NERDTreeShowHidden = 1
 
 "#######################################
-"#            Linter config	           #
+"#            Linter config	       #
 "#######################################
 
 let g:ale_linters = {
@@ -161,4 +130,3 @@ let g:lightline = {
       \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
-
