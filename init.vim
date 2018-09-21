@@ -60,12 +60,16 @@ set fileencodings=utf-8
 "#######################################
 "#		  color		       #
 "#######################################
-" set termguicolors
-colorscheme gruvbox
+
+set termguicolors
+
+"DRACULA
 "colorscheme dracula
-set background=dark
 "let g:dracula_italic = 0
-"set termguicolors
+
+"GRUVBOX
+colorscheme gruvbox
+set background=dark
 
 "" Configuration
 let g:gruvbox_contrast_dark='hard'
@@ -102,7 +106,7 @@ nnoremap <silent> <S-t> :tabnew<cr>
 let g:ale_use_deprecated_neovim = 1
 let NERDTreeShowHidden = 1
 
-"#######################################
+"####################################### kiko
 "#            Linter config	       #
 "#######################################
 
@@ -121,7 +125,7 @@ set autoread
 " ==> LightLine config
 
 let g:lightline = {
-      \ 'colorscheme': 'landscape',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
