@@ -6,7 +6,6 @@ and not set -q TMUX
 end
 
 # alias docker-compose & docker
-
 alias dcup='docker-compose up'
 alias dcrun='docker-compose run --rm app'
 alias dclogs='docker-compose logs'
@@ -20,7 +19,6 @@ alias l='la'
 alias pyserver='python -m SimpleHTTPServer'
 
 # Android-studio/React-Native | SDK
-
 set --export ANDROID_HOME $HOME/Android/Sdk
 set -Ux PATH $ANDROID_HOME/tools $PATH
 set -Ux PATH $ANDROID_HOME/tools/bin $PATH
