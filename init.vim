@@ -106,7 +106,7 @@ nnoremap <silent> <S-t> :tabnew<cr>
 let g:ale_use_deprecated_neovim = 1
 let NERDTreeShowHidden = 1
 
-"####################################### kiko
+"#######################################
 "#            Linter config	       #
 "#######################################
 
