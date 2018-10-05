@@ -159,9 +159,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'isRuslan/vim-es6'
     Plug 'leafgarland/typescript-vim'
 
+    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-rake'
+    Plug 'tpope/vim-projectionist'
+    Plug 'thoughtbot/vim-rspec'
+    Plug 'ecomba/vim-ruby-refactoring'
+
 call plug#end()
 
-filetype on
+filetype plugin indent on
 
 
 " ----------------------------------------------------------------------
@@ -362,7 +368,6 @@ if has('autocmd')
 
 endif
 
-
 " ----------------------------------------------------------------------
 " | Color Scheme                                                       |
 " ----------------------------------------------------------------------
@@ -443,7 +448,7 @@ nmap <leader>ss :call StripTrailingWhitespaces()<CR>
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 " [,t ] Toggle NERDTree
-map <leader>t :NERDTreeToggle<CR>
+nnoremap <silent><F4> :NERDTreeToggle<CR>
 
 nnoremap <C-\> :NERDTreeToggle<CR>
 inoremap <C-\> <ESC>:NERDTreeToggle<CR>
@@ -528,15 +533,15 @@ set statusline+=%{strlen(&fenc)?&fenc:'none'} " File encoding
 set statusline+=]
 set statusline+=%=             " Left/Right separator
 set statusline+=%c             " File encoding
-set statusline+=,
-set statusline+=%l             " Current line number
-set statusline+=/
-set statusline+=%L             " Total number of lines
-set statusline+=\ (%P)\        " Percent through file
+set statusline+=,utf
+set statusline+=%l             " Current line numberutf
+set statusline+=/utf
+set statusline+=%L             " Total number of lineutfs
+set statusline+=\ (%P)\        " Percent through fileutf
 
-" Example result:
-"
-"  [1] [master] [vim/vimrc][vim][unix:utf-8]            17,238/381 (59%)
+" Example result:utf
+"utf
+"  [1] [master] [vim/vimrc][vim][unix:utf-8]         utf   17,238/381 (59%)
 
 " ----------------------------------------------------------------------
 " | Personal Settings                                                  |
@@ -578,3 +583,58 @@ let g:jsx_ext_required = 0
 
 " Open file using `gf` in a vertical tab
 nnoremap gf :vertical wincmd f<CR>
+
+"*****************************************************************************
+"Custom configs                                                              *
+"*****************************************************************************
+
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+augroup vimrc-ruby
+  autocmd!
+  autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+augroup END
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" For ruby refactory
+if has('nvim')
+  runtime! macros/matchit.vim
+else
+  packadd! matchit
+endif
+
+" Ruby refactory
+nnoremap <leader>rap  :RAddParameter<cr>
+nnoremap <leader>rcpc :RConvertPostConditional<cr>
+nnoremap <leader>rel  :RExtractLet<cr>
+vnoremap <leader>rec  :RExtractConstant<cr>
+vnoremap <leader>relv :RExtractLocalVariable<cr>
+nnoremap <leader>rit  :RInlineTemp<cr>
+vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+vnoremap <leader>rem  :RExtractMethod<cr>
+
+let g:session_directory = "~/.vim/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
