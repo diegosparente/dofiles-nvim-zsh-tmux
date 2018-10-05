@@ -6,13 +6,6 @@ set nocompatible               " Don't make vim vi-compatibile
 
 syntax on                      " Enable syntax highlighting
 
-" if has('autocmd')
-"     filetype Plug indent on
-"     "           │     │    └──── Enable file type detection
-"     "           │     └───────── Enable loading of indent file
-"     "           └─────────────── Enable loading of Plug files
-" endif
-
 set autoindent                 " Copy indent to the new line
 
 set backspace=indent           " ┐
@@ -120,7 +113,7 @@ set wildmenu                   " Enable enhanced command-line
 set winminheight=0             " Allow windows to be squashed
 
 " ----------------------------------------------------------------------
-" | Plugs                                                            |
+" | Plugins                                                            |
 " ----------------------------------------------------------------------
 " https://github.com/junegunn/vim-plug
 
@@ -172,7 +165,7 @@ filetype on
 
 
 " ----------------------------------------------------------------------
-" | Plugs - Emmet                                                    |
+" | Plugins - Emmet                                                    |
 " ----------------------------------------------------------------------
 
 " Redefine trigger key for Emmet
@@ -189,7 +182,7 @@ let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snip
 
 
 " ----------------------------------------------------------------------
-" | Plugs - Indent Guides                                            |
+" | Plugins - Indent Guides                                            |
 " ----------------------------------------------------------------------
 
 " Set custom indent colors
@@ -207,7 +200,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven
 
 
 " ----------------------------------------------------------------------
-" | Plugs - Markdown                                                 |
+" | Plugins - Markdown                                                 |
 " ----------------------------------------------------------------------
 
 " Disable Folding
@@ -217,7 +210,7 @@ let g:vim_markdown_folding_disabled=1
 
 
 " ----------------------------------------------------------------------
-" | Plugs - NeoComplCache                                            |
+" | Plugins - NeoComplCache                                            |
 " ----------------------------------------------------------------------
 
 " Enable `neocomplcache` by default
@@ -240,7 +233,7 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " ----------------------------------------------------------------------
-" | Plugs - Syntastic                                                |
+" | Plugins - Syntastic                                                |
 " ----------------------------------------------------------------------
 
 " Inform Syntastic which checkers to use based on file types
@@ -585,21 +578,3 @@ let g:jsx_ext_required = 0
 
 " Open file using `gf` in a vertical tab
 nnoremap gf :vertical wincmd f<CR>
-
-"#######################################
-"#     statusline themes config	       #
-"#######################################
-
-" ==> LightLine config
-set noshowmode
-
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
