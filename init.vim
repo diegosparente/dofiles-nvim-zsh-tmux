@@ -64,15 +64,15 @@ set fileencodings=utf-8
 set termguicolors
 
 "DRACULA
-"colorscheme dracula
-"let g:dracula_italic = 0
+colorscheme dracula
+let g:dracula_italic = 0
 
 "GRUVBOX
-colorscheme gruvbox
-set background=dark
+"colorscheme gruvbox
+"set background=dark
 
 "" Configuration
-let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_dark='hard'
 
 "#######################################
 "#		  basic		       #

@@ -9,7 +9,7 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="agnoster"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -99,34 +99,48 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Simple server python
+alias pyserver='python -m SimpleHTTPServer 9001'
+
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# TMUX & TMATE
 if [ -z "$TMUX" ]; then
 #  exec tmux
   exec tmate
 fi
 
-# alias docker-compose & docker
-alias dcup='docker-compose up'
-alias dcrun='docker-compose run --rm app'
-alias dclogs='docker-compose logs'
-alias dcbuild='docker-compose build'
-
-alias nvimc='nvim ~/.config/nvim/init.vim'
-alias vimc='vim ~/.vimrc'
-
-# alias day-to-day
-alias l='la'
-
-# alias python server
-alias pyserver='python -m SimpleHTTPServer 9001'
-
+# REACT-NATIVE & ANDROID STUDIO
 export ANDROID_HOME=$HOME/Android/Sdk
+export FLUTTER=$HOME/Android/Sdk_flutter
+export PATH=$PATH:$FLUTTER/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 
+# GIT Stuff
+alias gs='git status'
+alias gc='git commit -m'
+alias gca='git commit -am'
+alias ga='git add'
+alias gaa='git add .'
 
+# Docker-compose & docker
+alias dcup='docker-compose up'
+alias dcrun='docker-compose run --rm app'
+alias dclogs='docker-compose logs'
+alias dcbuild='docker-compose build'
+
+# EXTRACTING Stuff
+alias tar='tar -xvf'
+alias tgz='tar -vzxf'
+alias bz2='bunzip'
+alias tbz2='tar -jxvf'
+
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+#git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
