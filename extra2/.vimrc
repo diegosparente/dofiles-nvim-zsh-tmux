@@ -5,6 +5,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
+" Arline
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " Dependencies of snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -48,6 +51,7 @@ Bundle 'plasticboy/vim-markdown'
 
 set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
+set noshowmode
 
 filetype plugin indent on
 
@@ -185,3 +189,8 @@ if has('nvim')
 else
   let test#strategy = "dispatch"
 endif
+
+" Airline config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='lucius'
+let g:airline_powerline_fonts = 1
