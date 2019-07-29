@@ -12,7 +12,6 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
-
 " Git tools
 Bundle 'tpope/vim-fugitive'
 " Dependency managment
@@ -45,9 +44,10 @@ Bundle 'janko-m/vim-test'
 Bundle 'scrooloose/nerdtree'
 " Dispatching the test runner to tmux pane
 Bundle 'tpope/vim-dispatch'
-
+" Markdown
 Bundle 'plasticboy/vim-markdown'
-
+"Editor config
+Bundle 'editorconfig/editorconfig-vim'
 
 set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
@@ -72,12 +72,8 @@ augroup END
 
 syntax enable
 
-" Configs to make Molokai look great
+" Configs colorscheme
 set background=dark
-"let g:molokai_original=1
-"let g:rehash256=1
-"set t_Co=256
-"colorscheme molokai
 colorscheme gruvbox
 let g:dracula_italic = 0
 
@@ -89,7 +85,7 @@ let g:dracula_italic = 0
 set nu
 
 " My leader key
-let mapleader=","
+let mapleader="\<space>"
 
 " Searching
 set hlsearch
@@ -192,5 +188,13 @@ endif
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='lucius'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
+
+" utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
+nnoremap <leader>sv :source ~/.vim/vimrc<cr>
