@@ -85,6 +85,17 @@ set number
 set relativenumber
 set mouse=a
 syntax on
+set cursorline
+set cursorcolumn
+set showtabline=2
+
+"#######################################
+"#               Highlight	       #
+"#######################################
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
+highlight CursorColumn guibg=#4d4e50 ctermbg=none
 
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
