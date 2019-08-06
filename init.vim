@@ -72,7 +72,7 @@ let g:dracula_italic = 0
 "set background=dark
 
 "" Configuration
-"let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='soft'
 
 "#######################################
 "#		  basic		       #
@@ -108,14 +108,9 @@ let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <F2> :Files<cr>
-nnoremap <silent> <F3> :NERDTreeFind<cr>
-nnoremap <silent> <F4> :NERDTreeToggle<cr>
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<cr>
+nnoremap <silent>q :NERDTreeToggle<cr>
 
 let g:ale_use_deprecated_neovim = 1
-let NERDTreeShowHidden = 1
 
 "#######################################
 "#            Linter config	       #
