@@ -53,8 +53,6 @@ set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
 set noshowmode
 
-filetype plugin indent on
-
 " Ruby stuff: Thanks Ben :)
 " ================
 syntax on                 " Enable syntax highlighting
