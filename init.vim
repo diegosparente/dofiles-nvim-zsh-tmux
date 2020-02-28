@@ -88,6 +88,7 @@ syntax on
 set cursorline
 set cursorcolumn
 set showtabline=2
+set colorcolumn=120
 
 "#######################################
 "#               Highlight	       #
