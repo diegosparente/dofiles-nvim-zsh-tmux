@@ -5,6 +5,7 @@
 call plug#begin()
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'morhetz/gruvbox'
+  Plug 'joshdick/onedark.vim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -44,6 +45,9 @@ call plug#begin()
   " ruby
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rake'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'ngmy/vim-rubocop'
+  Plug 'janko-m/vim-test'
   Plug 'tpope/vim-projectionist'
   Plug 'thoughtbot/vim-rspec'
   Plug 'ecomba/vim-ruby-refactoring'
@@ -64,12 +68,15 @@ set fileencodings=utf-8
 set termguicolors
 
 "DRACULA
-colorscheme dracula
-let g:dracula_italic = 0
+"colorscheme dracula
+"let g:dracula_italic = 0
 
 "GRUVBOX
-"colorscheme gruvbox
-"set background=dark
+colorscheme gruvbox
+set background=dark
+
+"ONEDARK
+"colorscheme onedark
 
 "" Configuration
 let g:gruvbox_contrast_dark='soft'
@@ -77,7 +84,11 @@ let g:gruvbox_contrast_dark='soft'
 "#######################################
 "#		  basic		       #
 "#######################################
-
+set list
+set listchars=tab:▸\           " ┐
+set listchars+=trail:·         " │ Use custom symbols to
+set listchars+=eol:↴           " │ represent invisible characters
+set listchars+=nbsp:_          " ┘
 set noshowmode
 set inccommand=split
 set hidden
@@ -89,6 +100,7 @@ set cursorline
 set cursorcolumn
 set showtabline=2
 set colorcolumn=120
+set clipboard=unnamedplus
 
 "#######################################
 "#               Highlight	       #
@@ -109,7 +121,7 @@ let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <silent> <F2> :Files<cr>
-nnoremap <silent>q :NERDTreeToggle<cr>
+nnoremap <silent> <F3> :NERDTreeToggle<cr>
 
 let g:ale_use_deprecated_neovim = 1
 
@@ -117,12 +129,12 @@ let g:ale_use_deprecated_neovim = 1
 "#            Linter config	       #
 "#######################################
 
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\}
+"let g:ale_linters = {
+"\   'javascript': ['standard'],
+"\}
 
 " Standard config
-autocmd bufwritepost *.js silent !standard --fix %
+"autocmd bufwritepost *.js silent !standard --fix %
 set autoread
 
 "#######################################
@@ -132,12 +144,12 @@ set autoread
 " ==> LightLine config
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
+      \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
